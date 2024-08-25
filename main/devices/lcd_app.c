@@ -38,7 +38,7 @@ void lcd_init (void)
 	lcd_send_cmd (0x0C); //Display on/off control --> D = 1, C and B = 0. (Cursor and blink, last two bits)
 	usleep(1000);
 }
-void lcd_send_cmd (const char cmd)
+void lcd_send_cmd (static char cmd)
 {
 	char data_u, data_l;
 	uint8_t data_t[4];
@@ -53,7 +53,7 @@ void lcd_send_cmd (const char cmd)
 	if (err!=0) ESP_LOGI(TAG, "Error in sending command");
 }
 
-void lcd_send_data (const char data)
+void lcd_send_data (static char data)
 {
 	
 	char data_u, data_l;         

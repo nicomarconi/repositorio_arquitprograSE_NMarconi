@@ -36,7 +36,7 @@ void lcd_init (void);
  */  
 
 
-void lcd_send_cmd (const char cmd);
+void lcd_send_cmd (static char cmd);
 
 /**
  *  @brief the function **lcd_send_data()** sends data to the LCD in 4 bits mode.
@@ -57,7 +57,7 @@ void lcd_send_cmd (const char cmd);
  *  - We also have to do send each half twice, once when the EN (enable) pin is 
  *    HIGH, and when it’s LOW.
  */  
-void lcd_send_data (const char data);
+void lcd_send_data (static char data);
 
 
 /**

@@ -27,7 +27,7 @@ int wait_for_state(dht11_t dht11,int state,int timeout)
     return  count;
 }
 
-void hold_low(dht11_t dht11,const int hold_time_us)
+void hold_low(dht11_t dht11,static int hold_time_us)
 {
     gpio_set_direction(dht11.dht11_pin,GPIO_MODE_OUTPUT);
     gpio_set_level(dht11.dht11_pin,0);

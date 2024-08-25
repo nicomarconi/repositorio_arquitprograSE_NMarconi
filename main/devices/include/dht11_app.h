@@ -31,7 +31,7 @@ int wait_for_state(dht11_t dht11,int state,int timeout);
  * @brief Holds the pin low fo the specified duration
  * @param hold_time_us time to hold the pin low for in microseconds
 */
-void hold_low(dht11_t dht11,const int hold_time_us);
+void hold_low(dht11_t dht11,static int hold_time_us);
 /**
  * @brief The function for reading temperature and humidity values from the dht11
  * @note  This function is blocking, ie: it forces the cpu to busy wait for the duration necessary to finish comms with the sensor.

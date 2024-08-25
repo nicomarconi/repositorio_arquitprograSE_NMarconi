@@ -1,0 +1,241 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="group___l_c_d___a_p_p" kind="group">
+    <compoundname>LCD_APP</compoundname>
+    <title>LCD_APP</title>
+    <innerfile refid="lcd__app_8h">lcd_app.h</innerfile>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group___l_c_d___a_p_p_1gae142073aa58743a872f2253c29556cdc" prot="public" static="no" mutable="no">
+        <type>esp_err_t</type>
+        <definition>esp_err_t err</definition>
+        <argsstring></argsstring>
+        <name>err</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" line="11" column="12" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="group___l_c_d___a_p_p_1ga5a85b9c772bbeb480b209a3e6ea92b4c" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;LCD&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" line="12" column="19" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group___l_c_d___a_p_p_1ga6842775ba83d166f02b8fef8bb63b1e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>lcd_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function calls inside initialitation functions for LCD and i2c comunication protcol. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>To follow the initialitation steps go to figure 24 in the datasheet. In order to initialise the LCD, we need to send some set of commands. In order to send the command or data to the LCD, we need to follow some set of steps<itemizedlist>
+<listitem><para>Set/Reset the data pins (D0 – D7) with respect to what data we want to write.</para>
+</listitem><listitem><para>Send a strobe signal, which is basically setting the ENABLE pin, and then Resetting it. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" line="14" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" bodystart="14" bodyend="40" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/lcd_app.h" declline="21" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_c_d___a_p_p_1ga0934da706080d3b0b3b2f04c9d044e67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_send_cmd</definition>
+        <argsstring>(char cmd)</argsstring>
+        <name>lcd_send_cmd</name>
+        <param>
+          <type>char</type>
+          <declname>cmd</declname>
+        </param>
+        <briefdescription>
+<para>the function <bold><ref refid="group___l_c_d___a_p_p_1ga0934da706080d3b0b3b2f04c9d044e67" kindref="member">lcd_send_cmd()</ref></bold> sends cpmmand to the LCD in 4 bits mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cmd</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>command to send to LCD.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<itemizedlist>
+<listitem><para>The he PCF8574 is connected to 4 data pins (D4 – D7.</para>
+</listitem><listitem><para>This means we only have 4 data pins available to write a 8 bit data.</para>
+</listitem><listitem><para>We do this by sending the data into 2 halves (4 bit each).</para>
+</listitem><listitem><para>Here first we will separate the upper 4 bits (stored in data_u) and lower 4 bits (data_l) from the command.</para>
+</listitem><listitem><para>We have to tell the LCD that it’s a <bold>command, and we do that by pulling the RS pin LOW.</bold></para>
+</listitem><listitem><para>We also have to do send each half twice, once when the EN (enable) pin is HIGH, and when it’s LOW. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" line="41" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" bodystart="41" bodyend="54" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/lcd_app.h" declline="39" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_c_d___a_p_p_1gac6c9650fc3a35bf393a6bf535e6d0b9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_send_data</definition>
+        <argsstring>(char data)</argsstring>
+        <name>lcd_send_data</name>
+        <param>
+          <type>char</type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>the function <bold><ref refid="group___l_c_d___a_p_p_1gac6c9650fc3a35bf393a6bf535e6d0b9f" kindref="member">lcd_send_data()</ref></bold> sends data to the LCD in 4 bits mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>data to send to LCD.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<itemizedlist>
+<listitem><para>This function prints a single character and the argument of this function should be the ascii character that you want to print on the display,</para>
+</listitem><listitem><para>For eg- lcd_send_data (‘A’) or lcd_send_data (0x41) or lcd_send_data (65), all will print the character A on the LCD.</para>
+</listitem><listitem><para>The he PCF8574 is connected to 4 data pins (D4 – D7.</para>
+</listitem><listitem><para>This means we only have 4 data pins available to write a 8 bit data.</para>
+</listitem><listitem><para>We do this by sending the data into 2 halves (4 bit each).</para>
+</listitem><listitem><para>Here first we will separate the upper 4 bits (stored in data_u) and lower 4 bits (data_l) from the <bold>data</bold>.</para>
+</listitem><listitem><para>We have to tell the LCD that it’s a <bold>data, and we do that by pulling the RS pin HIGH.</bold></para>
+</listitem><listitem><para>We also have to do send each half twice, once when the EN (enable) pin is HIGH, and when it’s LOW. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" line="56" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" bodystart="56" bodyend="74" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/lcd_app.h" declline="60" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_put_cur</definition>
+        <argsstring>(int row, int col)</argsstring>
+        <name>lcd_put_cur</name>
+        <param>
+          <type>int</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>col</declname>
+        </param>
+        <briefdescription>
+<para>the function <bold><ref refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kindref="member">lcd_put_cur()</ref></bold> lcd_put_cur is used to put the cursor at the respective location on the LCD. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>row</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>row where set the cursor. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>col</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>row where set the cursor.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<itemizedlist>
+<listitem><para>As we already know, the LCD1602 have 2 Rows (0-1) and 16 Columns (0-15).The DDRAM Address for the LCD1602 starts from the 0x80.</para>
+</listitem><listitem><para>So If we tell LCD to put the cursor at 0x80, it will basically put it in the beginning of the Top Row.</para>
+</listitem><listitem><para>Then the next Position will be 0x81, 0x82 and so on, upto 0x8F.The beginning of the bottom row starts from 0xC0, and goes all the way upto 0xCF.</para>
+</listitem><listitem><para>For example, If i want to put the cursor at the position (0,5), then the code will add 0x80 and 0x05, making it 0x85 and send this command to the LCD.</para>
+</listitem><listitem><para>After we put the cursor at certain location, we can send the data to it, which will be displayed on the LCD. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" line="78" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" bodystart="78" bodyend="91" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/lcd_app.h" declline="81" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_c_d___a_p_p_1gad235a86241458b1e7b8771688bfdaf9a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_clear</definition>
+        <argsstring>(void)</argsstring>
+        <name>lcd_clear</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>LCD 1602 have a command to clear the entire screen. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para><bold>0x01</bold> can be used to clear the entire screen and set.</para>
+</listitem><listitem><para>The cursor to the beginning, i.e at the 0x80 location.</para>
+</listitem><listitem><para>The command needs some time to execute, and therefore we have to provide some delay. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" line="99" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" bodystart="99" bodyend="104" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/lcd_app.h" declline="91" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void lcd_send_string</definition>
+        <argsstring>(char *str)</argsstring>
+        <name>lcd_send_string</name>
+        <param>
+          <type>char *</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+<para>lcd_send_string can be used to send a character string, or a buffer (containing characters) to the display. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" line="94" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/lcd_app.c" bodystart="94" bodyend="97" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/lcd_app.h" declline="98" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group___l_c_d___a_p_p_1ga16b338f4ba8614530cf7e484066f29c5" prot="public" static="no">
+        <name>SLAVE_ADDRESS_LCD</name>
+        <initializer>0x27</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Address of PCF8574 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/lcd_app.h" line="11" column="9" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/lcd_app.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

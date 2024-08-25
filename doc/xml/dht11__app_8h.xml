@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dht11__app_8h" kind="file" language="C++">
+    <compoundname>dht11_app.h</compoundname>
+    <includedby refid="dht11__app_8c" local="yes">/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c</includedby>
+    <includedby refid="startup__app_8h" local="yes">/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c</label>
+        <link refid="dht11__app_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c</label>
+        <link refid="startup__app_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h</label>
+        <link refid="dht11__app_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/app_temp_hume.c</label>
+        <link refid="app__temp__hume_8c"/>
+      </node>
+      <node id="3">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h</label>
+        <link refid="startup__app_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structdht11__t" prot="public">dht11_t</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__dht11__app_1ga4a875583ac49783fd62ec2a1d2500c45" prot="public" static="no">
+        <name>CONFIG_DHT11_PIN</name>
+        <initializer>33</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ESP32 WROOM number pin to connect the dht11 data pin </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" line="9" column="9" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__dht11__app_1ga0c63390af22aa0f877eece67372a7414" prot="public" static="no">
+        <name>CONNECTION_TIMEOUT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>the number of connection attempts before declaring a timeout </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" line="10" column="9" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wait_for_state</definition>
+        <argsstring>(dht11_t dht11, int state, int timeout)</argsstring>
+        <name>wait_for_state</name>
+        <param>
+          <type><ref refid="structdht11__t" kindref="compound">dht11_t</ref></type>
+          <declname>dht11</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Wait on pin until it reaches the specified state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>returns either the time waited or -1 in the case of a timeout </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>state to wait for </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if counter reaches timeout the function returns -1 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" line="12" column="5" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" bodystart="12" bodyend="28" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" declline="29" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dht11__app_1ga12e0d7e2dc516e7ee5e5f725d5a63117" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hold_low</definition>
+        <argsstring>(dht11_t dht11, int hold_time_us)</argsstring>
+        <name>hold_low</name>
+        <param>
+          <type><ref refid="structdht11__t" kindref="compound">dht11_t</ref></type>
+          <declname>dht11</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>hold_time_us</declname>
+        </param>
+        <briefdescription>
+<para>Holds the pin low fo the specified duration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hold_time_us</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time to hold the pin low for in microseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" line="30" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" bodystart="30" bodyend="36" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" declline="34" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dht11__app_1ga078422f8882d8e1f3123658895ef4904" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dht11_read</definition>
+        <argsstring>(dht11_t *dht11, int connection_timeout)</argsstring>
+        <name>dht11_read</name>
+        <param>
+          <type><ref refid="structdht11__t" kindref="compound">dht11_t</ref> *</type>
+          <declname>dht11</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>connection_timeout</declname>
+        </param>
+        <briefdescription>
+<para>The function for reading temperature and humidity values from the dht11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This function is blocking, ie: it forces the cpu to busy wait for the duration necessary to finish comms with the sensor. </para>
+</simplesect>
+<simplesect kind="note"><para>Wait for atleast 2 seconds between reads </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection_timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of connection attempts before declaring a timeout </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" line="38" column="5" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" bodystart="38" bodyend="103" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" declline="41" declcolumn="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>07/20/2023 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>DHT11_APP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DHT11_APP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="group__dht11__app_1ga4a875583ac49783fd62ec2a1d2500c45" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONFIG_DHT11_PIN<sp/>33<sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="group__dht11__app_1ga0c63390af22aa0f877eece67372a7414" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>CONNECTION_TIMEOUT<sp/>5<sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="structdht11__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18" refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" kindref="member">dht11_pin</ref>;<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19" refid="structdht11__t_1afc1d28cfbce795d6ea954ebe725241f5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structdht11__t_1afc1d28cfbce795d6ea954ebe725241f5" kindref="member">temperature</ref>;<sp/><sp/></highlight></codeline>
+<codeline lineno="20" refid="structdht11__t_1a6a87b2b0cff24d38b367ccd34843a206" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/><ref refid="structdht11__t_1a6a87b2b0cff24d38b367ccd34843a206" kindref="member">humidity</ref>;<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">}<sp/><ref refid="structdht11__t" kindref="compound">dht11_t</ref>;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" kindref="member">wait_for_state</ref>(<ref refid="structdht11__t" kindref="compound">dht11_t</ref><sp/>dht11,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__dht11__app_1ga12e0d7e2dc516e7ee5e5f725d5a63117" kindref="member">hold_low</ref>(<ref refid="structdht11__t" kindref="compound">dht11_t</ref><sp/>dht11,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hold_time_us);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__dht11__app_1ga078422f8882d8e1f3123658895ef4904" kindref="member">dht11_read</ref>(<ref refid="structdht11__t" kindref="compound">dht11_t</ref><sp/>*dht11,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>connection_timeout);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*DHT11_APP*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h"/>
+  </compounddef>
+</doxygen>

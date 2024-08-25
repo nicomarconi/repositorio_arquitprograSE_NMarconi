@@ -1,0 +1,259 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="dht11__app_8c" kind="file" language="C++">
+    <compoundname>dht11_app.c</compoundname>
+    <includes refid="dht11__app_8h" local="yes">include/dht11_app.h</includes>
+    <includes local="no">driver/gpio.h</includes>
+    <includes local="no">rom/ets_sys.h</includes>
+    <includes local="yes">esp_log.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c</label>
+        <link refid="dht11__app_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/dht11_app.h</label>
+        <link refid="dht11__app_8h"/>
+      </node>
+      <node id="5">
+        <label>esp_log.h</label>
+      </node>
+      <node id="4">
+        <label>rom/ets_sys.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int wait_for_state</definition>
+        <argsstring>(dht11_t dht11, int state, int timeout)</argsstring>
+        <name>wait_for_state</name>
+        <param>
+          <type><ref refid="structdht11__t" kindref="compound">dht11_t</ref></type>
+          <declname>dht11</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>state</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout</declname>
+        </param>
+        <briefdescription>
+<para>Wait on pin until it reaches the specified state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>returns either the time waited or -1 in the case of a timeout </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>state to wait for </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>if counter reaches timeout the function returns -1 </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" line="12" column="5" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" bodystart="12" bodyend="28" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" declline="29" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dht11__app_1ga12e0d7e2dc516e7ee5e5f725d5a63117" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void hold_low</definition>
+        <argsstring>(dht11_t dht11, int hold_time_us)</argsstring>
+        <name>hold_low</name>
+        <param>
+          <type><ref refid="structdht11__t" kindref="compound">dht11_t</ref></type>
+          <declname>dht11</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>hold_time_us</declname>
+        </param>
+        <briefdescription>
+<para>Holds the pin low fo the specified duration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hold_time_us</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>time to hold the pin low for in microseconds </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" line="30" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" bodystart="30" bodyend="36" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" declline="34" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__dht11__app_1ga078422f8882d8e1f3123658895ef4904" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dht11_read</definition>
+        <argsstring>(dht11_t *dht11, int connection_timeout)</argsstring>
+        <name>dht11_read</name>
+        <param>
+          <type><ref refid="structdht11__t" kindref="compound">dht11_t</ref> *</type>
+          <declname>dht11</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>connection_timeout</declname>
+        </param>
+        <briefdescription>
+<para>The function for reading temperature and humidity values from the dht11. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This function is blocking, ie: it forces the cpu to busy wait for the duration necessary to finish comms with the sensor. </para>
+</simplesect>
+<simplesect kind="note"><para>Wait for atleast 2 seconds between reads </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connection_timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the number of connection attempts before declaring a timeout </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" line="38" column="5" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" bodystart="38" bodyend="103" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" declline="41" declcolumn="5"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dht11__app_8h" kindref="compound">include/dht11_app.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;driver/gpio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;rom/ets_sys.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;esp_log.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" kindref="member">wait_for_state</ref>(<ref refid="structdht11__t" kindref="compound">dht11_t</ref><sp/>dht11,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>state,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout)</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{<sp/></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>dht11.<ref refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" kindref="member">dht11_pin</ref><sp/>=<sp/><ref refid="group__dht11__app_1ga4a875583ac49783fd62ec2a1d2500c45" kindref="member">CONFIG_DHT11_PIN</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>gpio_set_direction(dht11.<ref refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" kindref="member">dht11_pin</ref>,<sp/>GPIO_MODE_INPUT);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>count<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(gpio_get_level(dht11.<ref refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" kindref="member">dht11_pin</ref>)<sp/>!=<sp/>state)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(count<sp/>==<sp/>timeout)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>count<sp/>+=<sp/>2;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ets_delay_us(2);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/>count;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="group__dht11__app_1ga12e0d7e2dc516e7ee5e5f725d5a63117" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__dht11__app_1ga12e0d7e2dc516e7ee5e5f725d5a63117" kindref="member">hold_low</ref>(<ref refid="structdht11__t" kindref="compound">dht11_t</ref><sp/>dht11,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>hold_time_us)</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>gpio_set_direction(dht11.<ref refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" kindref="member">dht11_pin</ref>,GPIO_MODE_OUTPUT);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>gpio_set_level(dht11.<ref refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" kindref="member">dht11_pin</ref>,0);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>ets_delay_us(hold_time_us);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>gpio_set_level(dht11.<ref refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" kindref="member">dht11_pin</ref>,1);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="group__dht11__app_1ga078422f8882d8e1f3123658895ef4904" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="group__dht11__app_1ga078422f8882d8e1f3123658895ef4904" kindref="member">dht11_read</ref>(<ref refid="structdht11__t" kindref="compound">dht11_t</ref><sp/>*dht11,</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>connection_timeout)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>waited<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>one_duration<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>zero_duration<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout_counter<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/>recieved_data[5]<sp/>=<sp/></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00,</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0x00</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(timeout_counter<sp/>&lt;<sp/>connection_timeout)</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>timeout_counter++;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>gpio_set_direction(dht11-&gt;<ref refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" kindref="member">dht11_pin</ref>,GPIO_MODE_INPUT);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__dht11__app_1ga12e0d7e2dc516e7ee5e5f725d5a63117" kindref="member">hold_low</ref>(*dht11,<sp/>18000);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>waited<sp/>=<sp/><ref refid="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" kindref="member">wait_for_state</ref>(*dht11,0,40);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(waited<sp/>==<sp/>-1)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESP_LOGE(</highlight><highlight class="stringliteral">&quot;DHT11:&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;Failed<sp/>at<sp/>phase<sp/>1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ets_delay_us(20000);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>waited<sp/>=<sp/><ref refid="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" kindref="member">wait_for_state</ref>(*dht11,1,80);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(waited<sp/>==<sp/>-1)<sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESP_LOGE(</highlight><highlight class="stringliteral">&quot;DHT11:&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;Failed<sp/>at<sp/>phase<sp/>2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ets_delay_us(20000);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>waited<sp/>=<sp/><ref refid="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" kindref="member">wait_for_state</ref>(*dht11,0,80);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(waited<sp/>==<sp/>-1)<sp/></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ESP_LOGE(</highlight><highlight class="stringliteral">&quot;DHT11:&quot;</highlight><highlight class="normal">,</highlight><highlight class="stringliteral">&quot;Failed<sp/>at<sp/>phase<sp/>3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ets_delay_us(20000);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}<sp/></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(timeout_counter<sp/>==<sp/>connection_timeout)<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>-1;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>5;<sp/>i++)</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j<sp/>&lt;<sp/>8;<sp/>j++)</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>zero_duration<sp/>=<sp/><ref refid="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" kindref="member">wait_for_state</ref>(*dht11,1,60);<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>one_duration<sp/>=<sp/><ref refid="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" kindref="member">wait_for_state</ref>(*dht11,0,80);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>recieved_data[i]<sp/>|=<sp/>(one_duration<sp/>&gt;<sp/>zero_duration)<sp/>&lt;&lt;<sp/>(7<sp/>-<sp/>j);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>dht11-&gt;<ref refid="structdht11__t_1a6a87b2b0cff24d38b367ccd34843a206" kindref="member">humidity</ref><sp/>=<sp/>recieved_data[0]<sp/>+<sp/>recieved_data[1]<sp/>/10.0<sp/>+<sp/>10.0;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>dht11-&gt;<ref refid="structdht11__t_1afc1d28cfbce795d6ea954ebe725241f5" kindref="member">temperature</ref><sp/>=<sp/>recieved_data[2]<sp/>+<sp/>recieved_data[3]<sp/>/10.0<sp/>;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c"/>
+  </compounddef>
+</doxygen>

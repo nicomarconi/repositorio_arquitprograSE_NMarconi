@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="init__app_8c" kind="file" language="C++">
+    <compoundname>init_app.c</compoundname>
+    <includes refid="init__app_8h" local="yes">include/init_app.h</includes>
+    <includes local="yes">esp_log.h</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>include/i2c_app.h</label>
+        <link refid="i2c__app_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/init_app.h</label>
+        <link refid="init__app_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/lcd_app.h</label>
+        <link refid="lcd__app_8h"/>
+      </node>
+      <node id="1">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/init_app.c</label>
+        <link refid="init__app_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>esp_log.h</label>
+      </node>
+      <node id="4">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="5">
+        <label>esp_check.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group__init__app_1ga5a85b9c772bbeb480b209a3e6ea92b4c" prot="public" static="yes" mutable="no">
+        <type>const char *</type>
+        <definition>const char* TAG</definition>
+        <argsstring></argsstring>
+        <name>TAG</name>
+        <initializer>= &quot;i2c-simple-example&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/init_app.c" line="6" column="19" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/init_app.c" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__init__app_1ga2e22d5e270a39ffcf36b38e02cc7b033" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void init_devices</definition>
+        <argsstring>(void)</argsstring>
+        <name>init_devices</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function involves initialitation routines for devices as, LCD screen and its i2c comuniication protcol with the microcontroler. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/init_app.c" line="8" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/init_app.c" bodystart="8" bodyend="13" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/init_app.h" declline="19" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="init__app_8h" kindref="compound">include/init_app.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;esp_log.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*TAG<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;i2c-simple-example&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="group__init__app_1ga2e22d5e270a39ffcf36b38e02cc7b033" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__init__app_1ga2e22d5e270a39ffcf36b38e02cc7b033" kindref="member">init_devices</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>ESP_ERROR_CHECK(<ref refid="group__i2c__app_1gadbeb61fe3c40b09ee1b6de91f21cb6ae" kindref="member">i2c_master_init</ref>());</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>ESP_LOGI(TAG,<sp/></highlight><highlight class="stringliteral">&quot;I2C<sp/>initialized<sp/>successfully&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga6842775ba83d166f02b8fef8bb63b1e6" kindref="member">lcd_init</ref>();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/init_app.c"/>
+  </compounddef>
+</doxygen>

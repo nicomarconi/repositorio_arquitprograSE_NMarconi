@@ -1,0 +1,12 @@
+<map id="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" name="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c">
+<area shape="rect" id="node1" title=" " alt="" coords="325,5,601,76"/>
+<area shape="rect" id="node2" href="$startup__app_8h.html" title=" " alt="" coords="169,124,331,151"/>
+<area shape="rect" id="node8" title=" " alt="" coords="355,124,459,151"/>
+<area shape="rect" id="node9" title=" " alt="" coords="484,124,555,151"/>
+<area shape="rect" id="node10" title=" " alt="" coords="579,124,654,151"/>
+<area shape="rect" id="node3" href="$dht11__app_8h.html" title=" " alt="" coords="5,199,159,225"/>
+<area shape="rect" id="node4" href="$i2c__app_8h.html" title=" " alt="" coords="183,199,317,225"/>
+<area shape="rect" id="node7" href="$lcd__app_8h.html" title=" " alt="" coords="341,199,476,225"/>
+<area shape="rect" id="node5" title=" " alt="" coords="141,273,236,300"/>
+<area shape="rect" id="node6" title=" " alt="" coords="260,273,363,300"/>
+</map>

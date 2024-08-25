@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="i2c__app_8c" kind="file" language="C++">
+    <compoundname>i2c_app.c</compoundname>
+    <includes refid="i2c__app_8h" local="yes">include/i2c_app.h</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/i2c_app.c</label>
+        <link refid="i2c__app_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>include/i2c_app.h</label>
+        <link refid="i2c__app_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="4">
+        <label>esp_check.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__i2c__app_1gadbeb61fe3c40b09ee1b6de91f21cb6ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t i2c_master_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>i2c_master_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The <bold><ref refid="group__i2c__app_1gadbeb61fe3c40b09ee1b6de91f21cb6ae" kindref="member">i2c_master_init()</ref></bold> function will initialise the I2C protocol in the master mode, doing the folllowing steps: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para><bold>1º) Configuration:</bold> will set the initialization parameters of the structure <bold>i2c_config_t conf{}</bold> (master or slave mode,GPIO pins for SDA and SCL, clock speed, etc.).</para>
+</listitem><listitem><para><bold>2º) Set the configuration:</bold> will write the values that were set in step 1º. using the esp-idf function <bold><ref refid="group__i2c__app_1ga44211242a6b4b7420d5159fbbdef27cf" kindref="member">i2c_param_config()</ref></bold>, icluded in the directory (esp/esp-idf/components/driver/i2c/include/driver/i2c.h).</para>
+</listitem><listitem><para><bold>3º) Install driver:</bold> will install the diver, using the esp-idf function <bold><ref refid="group__i2c__app_1ga9caa9285f1241dbb8240be98f10b0f1b" kindref="member">i2c_driver_install()</ref></bold> ,included in the directory (esp/esp-idf/components/driver/i2c/include/driver/i2c.h). </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/i2c_app.c" line="9" column="11" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/i2c_app.c" bodystart="9" bodyend="25" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/i2c_app.h" declline="28" declcolumn="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="i2c__app_8h" kindref="compound">include/i2c_app.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;esp_log.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="group__i2c__app_1gadbeb61fe3c40b09ee1b6de91f21cb6ae" refkind="member"><highlight class="normal">esp_err_t<sp/><ref refid="group__i2c__app_1gadbeb61fe3c40b09ee1b6de91f21cb6ae" kindref="member">i2c_master_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i2c_master_port<sp/>=<sp/>I2C_NUM_0;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>i2c_config_t<sp/>conf<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.mode<sp/>=<sp/>I2C_MODE_MASTER,</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sda_io_num<sp/>=<sp/>GPIO_NUM_21,</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.scl_io_num<sp/>=<sp/>GPIO_NUM_22,</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.sda_pullup_en<sp/>=<sp/>GPIO_PULLUP_ENABLE,</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.scl_pullup_en<sp/>=<sp/>GPIO_PULLUP_ENABLE,</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.master.clk_speed<sp/>=<sp/>100000,</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__i2c__app_1ga44211242a6b4b7420d5159fbbdef27cf" kindref="member">i2c_param_config</ref>(i2c_master_port,<sp/>&amp;conf);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="group__i2c__app_1ga9caa9285f1241dbb8240be98f10b0f1b" kindref="member">i2c_driver_install</ref>(i2c_master_port,<sp/>conf.mode,<sp/>0,<sp/>0,<sp/>0);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/i2c_app.c"/>
+  </compounddef>
+</doxygen>

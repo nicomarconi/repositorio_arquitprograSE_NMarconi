@@ -1,0 +1,90 @@
+.TH "i2c_app" 3 "Sat Jul 27 2024" "Humedity and Temperature Sensing System Based in ESP32 Module" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+i2c_app \- I2c_app
+.SH SYNOPSIS
+.br
+.PP
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBi2c_app\&.h\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "esp_err_t \fBi2c_master_init\fP (void)"
+.br
+.RI "The \fB\fBi2c_master_init()\fP\fP function will initialise the I2C protocol in the master mode, doing the folllowing steps: "
+.ti -1c
+.RI "esp_err_t \fBi2c_param_config\fP (i2c_port_t i2c_master_port, const i2c_config_t *conf)"
+.br
+.RI "The i2c_param_config function will write the parameters that were set\&. "
+.ti -1c
+.RI "esp_err_t \fBi2c_driver_install\fP (i2c_port_t i2c_num, i2c_mode_t mode, size_t slv_rx_buf_len, size_t slv_tx_buf_len, int intr_alloc_flags)"
+.br
+.RI "The i2c_driver_install function will install the driver\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Function Documentation"
+.PP 
+.SS "esp_err_t i2c_driver_install (i2c_port_t i2c_num, i2c_mode_t mode, size_t slv_rx_buf_len, size_t slv_tx_buf_len, int intr_alloc_flags)"
+
+.PP
+The i2c_driver_install function will install the driver\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi2c_num\fP is the I2C instance we are using, I2C_NUM_0 
+.br
+\fImode\fP the I2C mode, which is master in this case\&. 
+.br
+\fIslv_rx_buf_len\fP the size of the RX and TX buffers\&. 
+.br
+\fIslv_tx_buf_len\fP the buffers are only needed if the ESP32 is being used in the slave mode\&. Since we are using it as a master, we will keep these buffers as 0\&. 
+.br
+\fIintr_alloc_flags\fP is to set the interrupt flag for the I2C\&. We will keep it as 0 too, since we are not using any interrupts 
+.RE
+.PP
+\fBNote\fP
+.RS 4
+void i2c_driver_install(I2C_NUM_0, conf\&.mode, 0, 0, 0); 
+.RE
+.PP
+
+.SS "esp_err_t i2c_master_init (void)"
+
+.PP
+The \fB\fBi2c_master_init()\fP\fP function will initialise the I2C protocol in the master mode, doing the folllowing steps: 
+.IP "\(bu" 2
+\fB1º) Configuration:\fP will set the initialization parameters of the structure \fBi2c_config_t conf{}\fP (master or slave mode,GPIO pins for SDA and SCL, clock speed, etc\&.)\&.
+.IP "\(bu" 2
+\fB2º) Set the configuration:\fP will write the values that were set in step 1º\&. using the esp-idf function \fB\fBi2c_param_config()\fP\fP, icluded in the directory (esp/esp-idf/components/driver/i2c/include/driver/i2c\&.h)\&.
+.IP "\(bu" 2
+\fB3º) Install driver:\fP will install the diver, using the esp-idf function \fB\fBi2c_driver_install()\fP\fP ,included in the directory (esp/esp-idf/components/driver/i2c/include/driver/i2c\&.h)\&. 
+.PP
+
+.PP
+Definition at line 9 of file i2c_app\&.c\&.
+.SS "esp_err_t i2c_param_config (i2c_port_t i2c_master_port, const i2c_config_t * conf)"
+
+.PP
+The i2c_param_config function will write the parameters that were set\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIi2c_master_port\fP is the I2C instance we are using, I2C_NUM_0 
+.br
+\fIconf\fP pointer to I2C parameter settings 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Humedity and Temperature Sensing System Based in ESP32 Module from the source code\&.

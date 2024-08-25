@@ -1,0 +1,240 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="i2c__app_8h" kind="file" language="C++">
+    <compoundname>i2c_app.h</compoundname>
+    <includes local="yes">driver/i2c.h</includes>
+    <includes local="yes">esp_check.h</includes>
+    <includedby refid="i2c__app_8c" local="yes">/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/i2c_app.c</includedby>
+    <includedby refid="init__app_8h" local="yes">/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/init_app.h</includedby>
+    <includedby refid="startup__app_8h" local="yes">/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/i2c_app.h</label>
+        <link refid="i2c__app_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="3">
+        <label>esp_check.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/i2c_app.c</label>
+        <link refid="i2c__app_8c"/>
+      </node>
+      <node id="7">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c</label>
+        <link refid="startup__app_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/i2c_app.h</label>
+        <link refid="i2c__app_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/init_app.h</label>
+        <link refid="init__app_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/app_temp_hume.c</label>
+        <link refid="app__temp__hume_8c"/>
+      </node>
+      <node id="5">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/init_app.c</label>
+        <link refid="init__app_8c"/>
+      </node>
+      <node id="6">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h</label>
+        <link refid="startup__app_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__i2c__app_1gadbeb61fe3c40b09ee1b6de91f21cb6ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t i2c_master_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>i2c_master_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The <bold><ref refid="group__i2c__app_1gadbeb61fe3c40b09ee1b6de91f21cb6ae" kindref="member">i2c_master_init()</ref></bold> function will initialise the I2C protocol in the master mode, doing the folllowing steps: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para><bold>1º) Configuration:</bold> will set the initialization parameters of the structure <bold>i2c_config_t conf{}</bold> (master or slave mode,GPIO pins for SDA and SCL, clock speed, etc.).</para>
+</listitem><listitem><para><bold>2º) Set the configuration:</bold> will write the values that were set in step 1º. using the esp-idf function <bold><ref refid="group__i2c__app_1ga44211242a6b4b7420d5159fbbdef27cf" kindref="member">i2c_param_config()</ref></bold>, icluded in the directory (esp/esp-idf/components/driver/i2c/include/driver/i2c.h).</para>
+</listitem><listitem><para><bold>3º) Install driver:</bold> will install the diver, using the esp-idf function <bold><ref refid="group__i2c__app_1ga9caa9285f1241dbb8240be98f10b0f1b" kindref="member">i2c_driver_install()</ref></bold> ,included in the directory (esp/esp-idf/components/driver/i2c/include/driver/i2c.h). </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/i2c_app.c" line="9" column="11" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/i2c_app.c" bodystart="9" bodyend="25" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/i2c_app.h" declline="28" declcolumn="14"/>
+      </memberdef>
+      <memberdef kind="function" id="group__i2c__app_1ga44211242a6b4b7420d5159fbbdef27cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t i2c_param_config</definition>
+        <argsstring>(i2c_port_t i2c_master_port, const i2c_config_t *conf)</argsstring>
+        <name>i2c_param_config</name>
+        <param>
+          <type>i2c_port_t</type>
+          <declname>i2c_master_port</declname>
+        </param>
+        <param>
+          <type>const i2c_config_t *</type>
+          <declname>conf</declname>
+        </param>
+        <briefdescription>
+<para>The i2c_param_config function will write the parameters that were set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">i2c_master_port</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the I2C instance we are using, I2C_NUM_0 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">conf</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>pointer to I2C parameter settings </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/i2c_app.h" line="35" column="12" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/i2c_app.h" declline="35" declcolumn="12"/>
+      </memberdef>
+      <memberdef kind="function" id="group__i2c__app_1ga9caa9285f1241dbb8240be98f10b0f1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>esp_err_t</type>
+        <definition>esp_err_t i2c_driver_install</definition>
+        <argsstring>(i2c_port_t i2c_num, i2c_mode_t mode, size_t slv_rx_buf_len, size_t slv_tx_buf_len, int intr_alloc_flags)</argsstring>
+        <name>i2c_driver_install</name>
+        <param>
+          <type>i2c_port_t</type>
+          <declname>i2c_num</declname>
+        </param>
+        <param>
+          <type>i2c_mode_t</type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>slv_rx_buf_len</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>slv_tx_buf_len</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>intr_alloc_flags</declname>
+        </param>
+        <briefdescription>
+<para>The i2c_driver_install function will install the driver. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">i2c_num</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is the I2C instance we are using, I2C_NUM_0 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the I2C mode, which is master in this case. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">slv_rx_buf_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the size of the RX and TX buffers. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">slv_tx_buf_len</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the buffers are only needed if the ESP32 is being used in the slave mode. Since we are using it as a master, we will keep these buffers as 0. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">intr_alloc_flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>is to set the interrupt flag for the I2C. We will keep it as 0 too, since we are not using any interrupts </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>void i2c_driver_install(I2C_NUM_0, conf.mode, 0, 0, 0); </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/i2c_app.h" line="48" column="13" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/i2c_app.h" declline="48" declcolumn="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>07/20/2024 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>I2C_APP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>I2C_APP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;driver/i2c.h&quot;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;esp_check.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/>esp_err_t<sp/><ref refid="group__i2c__app_1gadbeb61fe3c40b09ee1b6de91f21cb6ae" kindref="member">i2c_master_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="group__i2c__app_1ga44211242a6b4b7420d5159fbbdef27cf" refkind="member"><highlight class="normal"><sp/>esp_err_t<sp/><ref refid="group__i2c__app_1ga44211242a6b4b7420d5159fbbdef27cf" kindref="member">i2c_param_config</ref>(i2c_port_t<sp/>i2c_master_port,</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>i2c_config_t<sp/>*conf);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="group__i2c__app_1ga9caa9285f1241dbb8240be98f10b0f1b" refkind="member"><highlight class="normal"><sp/>esp_err_t<sp/><sp/><ref refid="group__i2c__app_1ga9caa9285f1241dbb8240be98f10b0f1b" kindref="member">i2c_driver_install</ref>(i2c_port_t<sp/>i2c_num,<sp/>i2c_mode_t<sp/>mode,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>slv_rx_buf_len,<sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>slv_tx_buf_len,</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>intr_alloc_flags);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*I2C_APP*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/i2c_app.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="startup__app_8h" kind="file" language="C++">
+    <compoundname>startup_app.h</compoundname>
+    <includes refid="dht11__app_8h" local="yes">include/dht11_app.h</includes>
+    <includes refid="i2c__app_8h" local="yes">include/i2c_app.h</includes>
+    <includes refid="lcd__app_8h" local="yes">include/lcd_app.h</includes>
+    <includedby refid="app__temp__hume_8c" local="yes">/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/app_temp_hume.c</includedby>
+    <includedby refid="startup__app_8c" local="yes">/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>include/i2c_app.h</label>
+        <link refid="i2c__app_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/lcd_app.h</label>
+        <link refid="lcd__app_8h"/>
+      </node>
+      <node id="2">
+        <label>include/dht11_app.h</label>
+        <link refid="dht11__app_8h"/>
+      </node>
+      <node id="4">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h</label>
+        <link refid="startup__app_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>esp_check.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c</label>
+        <link refid="startup__app_8c"/>
+      </node>
+      <node id="2">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/app_temp_hume.c</label>
+        <link refid="app__temp__hume_8c"/>
+      </node>
+      <node id="1">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h</label>
+        <link refid="startup__app_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__startup__app_1ga9b70b8c1d6de4b22117b427caa1002b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void welcome_message</definition>
+        <argsstring>(void)</argsstring>
+        <name>welcome_message</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function shows on the LCD screen some general information as, project&apos;s name, project&apos;s author,and so on. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" line="11" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" bodystart="11" bodyend="36" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h" declline="17" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__startup__app_1ga2d4f524570a1f8716afe8b4615976f6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void get_temp_humed</definition>
+        <argsstring>(void)</argsstring>
+        <name>get_temp_humed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function is inide of a while loop and shows on the LCD screen the temperature and humedity current values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" line="38" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" bodystart="38" bodyend="56" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h" declline="24" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="date"><para>20/07/2024 </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>STARTUP_APP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STARTUP_APP</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dht11__app_8h" kindref="compound">include/dht11_app.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="i2c__app_8h" kindref="compound">include/i2c_app.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="lcd__app_8h" kindref="compound">include/lcd_app.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__startup__app_1ga9b70b8c1d6de4b22117b427caa1002b7" kindref="member">welcome_message</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__startup__app_1ga2d4f524570a1f8716afe8b4615976f6b" kindref="member">get_temp_humed</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*STARTUP_APP*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h"/>
+  </compounddef>
+</doxygen>

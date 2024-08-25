@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.1" xml:lang="en-US">
+  <compound refid="structdht11__t" kind="struct"><name>dht11_t</name>
+    <member refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" kind="variable"><name>dht11_pin</name></member>
+    <member refid="structdht11__t_1afc1d28cfbce795d6ea954ebe725241f5" kind="variable"><name>temperature</name></member>
+    <member refid="structdht11__t_1a6a87b2b0cff24d38b367ccd34843a206" kind="variable"><name>humidity</name></member>
+  </compound>
+  <compound refid="app__temp__hume_8c" kind="file"><name>app_temp_hume.c</name>
+    <member refid="app__temp__hume_8c_1a630544a7f0a2cc40d8a7fefab7e2fe70" kind="function"><name>app_main</name></member>
+  </compound>
+  <compound refid="dht11__app_8c" kind="file"><name>dht11_app.c</name>
+    <member refid="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" kind="function"><name>wait_for_state</name></member>
+    <member refid="group__dht11__app_1ga12e0d7e2dc516e7ee5e5f725d5a63117" kind="function"><name>hold_low</name></member>
+    <member refid="group__dht11__app_1ga078422f8882d8e1f3123658895ef4904" kind="function"><name>dht11_read</name></member>
+  </compound>
+  <compound refid="i2c__app_8c" kind="file"><name>i2c_app.c</name>
+    <member refid="group__i2c__app_1gadbeb61fe3c40b09ee1b6de91f21cb6ae" kind="function"><name>i2c_master_init</name></member>
+  </compound>
+  <compound refid="dht11__app_8h" kind="file"><name>dht11_app.h</name>
+    <member refid="group__dht11__app_1ga4a875583ac49783fd62ec2a1d2500c45" kind="define"><name>CONFIG_DHT11_PIN</name></member>
+    <member refid="group__dht11__app_1ga0c63390af22aa0f877eece67372a7414" kind="define"><name>CONNECTION_TIMEOUT</name></member>
+    <member refid="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" kind="function"><name>wait_for_state</name></member>
+    <member refid="group__dht11__app_1ga12e0d7e2dc516e7ee5e5f725d5a63117" kind="function"><name>hold_low</name></member>
+    <member refid="group__dht11__app_1ga078422f8882d8e1f3123658895ef4904" kind="function"><name>dht11_read</name></member>
+  </compound>
+  <compound refid="i2c__app_8h" kind="file"><name>i2c_app.h</name>
+    <member refid="group__i2c__app_1gadbeb61fe3c40b09ee1b6de91f21cb6ae" kind="function"><name>i2c_master_init</name></member>
+    <member refid="group__i2c__app_1ga44211242a6b4b7420d5159fbbdef27cf" kind="function"><name>i2c_param_config</name></member>
+    <member refid="group__i2c__app_1ga9caa9285f1241dbb8240be98f10b0f1b" kind="function"><name>i2c_driver_install</name></member>
+  </compound>
+  <compound refid="init__app_8h" kind="file"><name>init_app.h</name>
+    <member refid="group__init__app_1ga2e22d5e270a39ffcf36b38e02cc7b033" kind="function"><name>init_devices</name></member>
+  </compound>
+  <compound refid="lcd__app_8h" kind="file"><name>lcd_app.h</name>
+    <member refid="group___l_c_d___a_p_p_1ga16b338f4ba8614530cf7e484066f29c5" kind="define"><name>SLAVE_ADDRESS_LCD</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga6842775ba83d166f02b8fef8bb63b1e6" kind="function"><name>lcd_init</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga0934da706080d3b0b3b2f04c9d044e67" kind="function"><name>lcd_send_cmd</name></member>
+    <member refid="group___l_c_d___a_p_p_1gac6c9650fc3a35bf393a6bf535e6d0b9f" kind="function"><name>lcd_send_data</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kind="function"><name>lcd_put_cur</name></member>
+    <member refid="group___l_c_d___a_p_p_1gad235a86241458b1e7b8771688bfdaf9a" kind="function"><name>lcd_clear</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" kind="function"><name>lcd_send_string</name></member>
+  </compound>
+  <compound refid="startup__app_8h" kind="file"><name>startup_app.h</name>
+    <member refid="group__startup__app_1ga9b70b8c1d6de4b22117b427caa1002b7" kind="function"><name>welcome_message</name></member>
+    <member refid="group__startup__app_1ga2d4f524570a1f8716afe8b4615976f6b" kind="function"><name>get_temp_humed</name></member>
+  </compound>
+  <compound refid="init__app_8c" kind="file"><name>init_app.c</name>
+    <member refid="group__init__app_1ga5a85b9c772bbeb480b209a3e6ea92b4c" kind="variable"><name>TAG</name></member>
+    <member refid="group__init__app_1ga2e22d5e270a39ffcf36b38e02cc7b033" kind="function"><name>init_devices</name></member>
+  </compound>
+  <compound refid="lcd__app_8c" kind="file"><name>lcd_app.c</name>
+    <member refid="group___l_c_d___a_p_p_1gae142073aa58743a872f2253c29556cdc" kind="variable"><name>err</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga5a85b9c772bbeb480b209a3e6ea92b4c" kind="variable"><name>TAG</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga6842775ba83d166f02b8fef8bb63b1e6" kind="function"><name>lcd_init</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga0934da706080d3b0b3b2f04c9d044e67" kind="function"><name>lcd_send_cmd</name></member>
+    <member refid="group___l_c_d___a_p_p_1gac6c9650fc3a35bf393a6bf535e6d0b9f" kind="function"><name>lcd_send_data</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kind="function"><name>lcd_put_cur</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" kind="function"><name>lcd_send_string</name></member>
+    <member refid="group___l_c_d___a_p_p_1gad235a86241458b1e7b8771688bfdaf9a" kind="function"><name>lcd_clear</name></member>
+  </compound>
+  <compound refid="startup__app_8c" kind="file"><name>startup_app.c</name>
+    <member refid="group__startup__app_1ga9b70b8c1d6de4b22117b427caa1002b7" kind="function"><name>welcome_message</name></member>
+    <member refid="group__startup__app_1ga2d4f524570a1f8716afe8b4615976f6b" kind="function"><name>get_temp_humed</name></member>
+  </compound>
+  <compound refid="group__dht11__app" kind="group"><name>dht11_app</name>
+    <member refid="group__dht11__app_1ga148031b79d54fab90d1a0edd2c8df713" kind="function"><name>wait_for_state</name></member>
+    <member refid="group__dht11__app_1ga12e0d7e2dc516e7ee5e5f725d5a63117" kind="function"><name>hold_low</name></member>
+    <member refid="group__dht11__app_1ga078422f8882d8e1f3123658895ef4904" kind="function"><name>dht11_read</name></member>
+    <member refid="group__dht11__app_1ga4a875583ac49783fd62ec2a1d2500c45" kind="define"><name>CONFIG_DHT11_PIN</name></member>
+    <member refid="group__dht11__app_1ga0c63390af22aa0f877eece67372a7414" kind="define"><name>CONNECTION_TIMEOUT</name></member>
+  </compound>
+  <compound refid="group__i2c__app" kind="group"><name>i2c_app</name>
+    <member refid="group__i2c__app_1gadbeb61fe3c40b09ee1b6de91f21cb6ae" kind="function"><name>i2c_master_init</name></member>
+    <member refid="group__i2c__app_1ga44211242a6b4b7420d5159fbbdef27cf" kind="function"><name>i2c_param_config</name></member>
+    <member refid="group__i2c__app_1ga9caa9285f1241dbb8240be98f10b0f1b" kind="function"><name>i2c_driver_install</name></member>
+  </compound>
+  <compound refid="group__init__app" kind="group"><name>init_app</name>
+    <member refid="group__init__app_1ga5a85b9c772bbeb480b209a3e6ea92b4c" kind="variable"><name>TAG</name></member>
+    <member refid="group__init__app_1ga2e22d5e270a39ffcf36b38e02cc7b033" kind="function"><name>init_devices</name></member>
+  </compound>
+  <compound refid="group___l_c_d___a_p_p" kind="group"><name>LCD_APP</name>
+    <member refid="group___l_c_d___a_p_p_1gae142073aa58743a872f2253c29556cdc" kind="variable"><name>err</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga5a85b9c772bbeb480b209a3e6ea92b4c" kind="variable"><name>TAG</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga6842775ba83d166f02b8fef8bb63b1e6" kind="function"><name>lcd_init</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga0934da706080d3b0b3b2f04c9d044e67" kind="function"><name>lcd_send_cmd</name></member>
+    <member refid="group___l_c_d___a_p_p_1gac6c9650fc3a35bf393a6bf535e6d0b9f" kind="function"><name>lcd_send_data</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kind="function"><name>lcd_put_cur</name></member>
+    <member refid="group___l_c_d___a_p_p_1gad235a86241458b1e7b8771688bfdaf9a" kind="function"><name>lcd_clear</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" kind="function"><name>lcd_send_string</name></member>
+    <member refid="group___l_c_d___a_p_p_1ga16b338f4ba8614530cf7e484066f29c5" kind="define"><name>SLAVE_ADDRESS_LCD</name></member>
+  </compound>
+  <compound refid="group__startup__app" kind="group"><name>startup_app</name>
+    <member refid="group__startup__app_1ga9b70b8c1d6de4b22117b427caa1002b7" kind="function"><name>welcome_message</name></member>
+    <member refid="group__startup__app_1ga2d4f524570a1f8716afe8b4615976f6b" kind="function"><name>get_temp_humed</name></member>
+  </compound>
+  <compound refid="dir_ac71980bfdedfaf66599381cfa5fc4df" kind="dir"><name>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices</name>
+  </compound>
+  <compound refid="dir_e0827e7a08be7cd65e4c8daa2951710b" kind="dir"><name>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include</name>
+  </compound>
+  <compound refid="dir_5c982d53a68cdbcd421152b4020263a9" kind="dir"><name>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

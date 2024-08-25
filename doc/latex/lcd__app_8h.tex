@@ -1,0 +1,36 @@
+\hypertarget{lcd__app_8h}{}\doxysection{/home/nicolas/\+Documentos/especialidad\+\_\+en\+\_\+\+SE/2\+\_\+arquitectura\+\_\+2024\+\_\+\+SE/lcd\+\_\+hdt11\+\_\+nico/main/devices/include/lcd\+\_\+app.h File Reference}
+\label{lcd__app_8h}\index{/home/nicolas/Documentos/especialidad\_en\_SE/2\_arquitectura\_2024\_SE/lcd\_hdt11\_nico/main/devices/include/lcd\_app.h@{/home/nicolas/Documentos/especialidad\_en\_SE/2\_arquitectura\_2024\_SE/lcd\_hdt11\_nico/main/devices/include/lcd\_app.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lcd__app_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___l_c_d___a_p_p_ga16b338f4ba8614530cf7e484066f29c5}{SLAVE\+\_\+\+ADDRESS\+\_\+\+LCD}}~0x27
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_ga6842775ba83d166f02b8fef8bb63b1e6}{lcd\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em This function calls inside initialitation functions for LCD and i2c comunication protcol. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_ga0934da706080d3b0b3b2f04c9d044e67}{lcd\+\_\+send\+\_\+cmd}} (char cmd)
+\begin{DoxyCompactList}\small\item\em the function {\bfseries{\mbox{\hyperlink{group___l_c_d___a_p_p_ga0934da706080d3b0b3b2f04c9d044e67}{lcd\+\_\+send\+\_\+cmd()}}}} sends cpmmand to the LCD in 4 bits mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_gac6c9650fc3a35bf393a6bf535e6d0b9f}{lcd\+\_\+send\+\_\+data}} (char data)
+\begin{DoxyCompactList}\small\item\em the function {\bfseries{\mbox{\hyperlink{group___l_c_d___a_p_p_gac6c9650fc3a35bf393a6bf535e6d0b9f}{lcd\+\_\+send\+\_\+data()}}}} sends data to the LCD in 4 bits mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_ga335c8a975c28b9eb7ee6c27a6efe7c44}{lcd\+\_\+put\+\_\+cur}} (int row, int col)
+\begin{DoxyCompactList}\small\item\em the function {\bfseries{\mbox{\hyperlink{group___l_c_d___a_p_p_ga335c8a975c28b9eb7ee6c27a6efe7c44}{lcd\+\_\+put\+\_\+cur()}}}} lcd\+\_\+put\+\_\+cur is used to put the cursor at the respective location on the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_gad235a86241458b1e7b8771688bfdaf9a}{lcd\+\_\+clear}} (void)
+\begin{DoxyCompactList}\small\item\em LCD 1602 have a command to clear the entire screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_ga234ae1cb5d91fa756d1216e3540222ad}{lcd\+\_\+send\+\_\+string}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em lcd\+\_\+send\+\_\+string can be used to send a character string, or a buffer (containing characters) to the display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyDate}{Date}
+07/20/2024 
+\end{DoxyDate}

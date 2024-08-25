@@ -1,0 +1,10 @@
+<map id="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/app_temp_hume.c" name="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/app_temp_hume.c">
+<area shape="rect" id="node1" title=" " alt="" coords="45,5,297,76"/>
+<area shape="rect" id="node2" href="$init__app_8h.html" title=" " alt="" coords="5,124,153,165"/>
+<area shape="rect" id="node7" href="$startup__app_8h.html" title=" " alt="" coords="178,124,351,165"/>
+<area shape="rect" id="node3" href="$i2c__app_8h.html" title=" " alt="" coords="171,213,305,240"/>
+<area shape="rect" id="node6" href="$lcd__app_8h.html" title=" " alt="" coords="12,213,147,240"/>
+<area shape="rect" id="node4" title=" " alt="" coords="129,288,224,315"/>
+<area shape="rect" id="node5" title=" " alt="" coords="248,288,351,315"/>
+<area shape="rect" id="node8" href="$dht11__app_8h.html" title=" " alt="" coords="329,213,483,240"/>
+</map>

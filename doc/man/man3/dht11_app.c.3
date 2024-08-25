@@ -1,0 +1,36 @@
+.TH "/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c" 3 "Sat Jul 27 2024" "Humedity and Temperature Sensing System Based in ESP32 Module" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/dht11_app.c
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'include/dht11_app\&.h'\fP
+.br
+\fC#include <driver/gpio\&.h>\fP
+.br
+\fC#include <rom/ets_sys\&.h>\fP
+.br
+\fC#include 'esp_log\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBwait_for_state\fP (\fBdht11_t\fP dht11, int state, int timeout)"
+.br
+.RI "Wait on pin until it reaches the specified state\&. "
+.ti -1c
+.RI "void \fBhold_low\fP (\fBdht11_t\fP dht11, int hold_time_us)"
+.br
+.RI "Holds the pin low fo the specified duration\&. "
+.ti -1c
+.RI "int \fBdht11_read\fP (\fBdht11_t\fP *dht11, int connection_timeout)"
+.br
+.RI "The function for reading temperature and humidity values from the dht11\&. "
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Humedity and Temperature Sensing System Based in ESP32 Module from the source code\&.

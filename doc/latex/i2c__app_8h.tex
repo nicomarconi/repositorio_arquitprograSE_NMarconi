@@ -1,0 +1,35 @@
+\hypertarget{i2c__app_8h}{}\doxysection{/home/nicolas/\+Documentos/especialidad\+\_\+en\+\_\+\+SE/2\+\_\+arquitectura\+\_\+2024\+\_\+\+SE/lcd\+\_\+hdt11\+\_\+nico/main/devices/include/i2c\+\_\+app.h File Reference}
+\label{i2c__app_8h}\index{/home/nicolas/Documentos/especialidad\_en\_SE/2\_arquitectura\_2024\_SE/lcd\_hdt11\_nico/main/devices/include/i2c\_app.h@{/home/nicolas/Documentos/especialidad\_en\_SE/2\_arquitectura\_2024\_SE/lcd\_hdt11\_nico/main/devices/include/i2c\_app.h}}
+{\ttfamily \#include \char`\"{}driver/i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}esp\+\_\+check.\+h\char`\"{}}\newline
+Include dependency graph for i2c\+\_\+app.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{i2c__app_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{i2c__app_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{group__i2c__app_gadbeb61fe3c40b09ee1b6de91f21cb6ae}{i2c\+\_\+master\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em The {\bfseries{\mbox{\hyperlink{group__i2c__app_gadbeb61fe3c40b09ee1b6de91f21cb6ae}{i2c\+\_\+master\+\_\+init()}}}} function will initialise the I2C protocol in the master mode, doing the folllowing steps\+: \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{group__i2c__app_ga44211242a6b4b7420d5159fbbdef27cf}{i2c\+\_\+param\+\_\+config}} (i2c\+\_\+port\+\_\+t i2c\+\_\+master\+\_\+port, const i2c\+\_\+config\+\_\+t $\ast$conf)
+\begin{DoxyCompactList}\small\item\em The i2c\+\_\+param\+\_\+config function will write the parameters that were set. \end{DoxyCompactList}\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{group__i2c__app_ga9caa9285f1241dbb8240be98f10b0f1b}{i2c\+\_\+driver\+\_\+install}} (i2c\+\_\+port\+\_\+t i2c\+\_\+num, i2c\+\_\+mode\+\_\+t mode, size\+\_\+t slv\+\_\+rx\+\_\+buf\+\_\+len, size\+\_\+t slv\+\_\+tx\+\_\+buf\+\_\+len, int intr\+\_\+alloc\+\_\+flags)
+\begin{DoxyCompactList}\small\item\em The i2c\+\_\+driver\+\_\+install function will install the driver. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyDate}{Date}
+07/20/2024 
+\end{DoxyDate}

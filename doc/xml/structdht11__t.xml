@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="structdht11__t" kind="struct" language="C++" prot="public">
+    <compoundname>dht11_t</compoundname>
+    <includes refid="dht11__app_8h" local="no">dht11_app.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int dht11_pin</definition>
+        <argsstring></argsstring>
+        <name>dht11_pin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>ESP32 WROOM number pin to connect the dht11 data pin </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" line="18" column="9" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdht11__t_1afc1d28cfbce795d6ea954ebe725241f5" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float temperature</definition>
+        <argsstring></argsstring>
+        <name>temperature</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>variable to store the last temperature reading <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" line="19" column="11" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdht11__t_1a6a87b2b0cff24d38b367ccd34843a206" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float humidity</definition>
+        <argsstring></argsstring>
+        <name>humidity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>variable to store the last humedity reading <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" line="20" column="11" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Structure containing readings and info about the dht11. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" line="16" column="1" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/dht11_app.h" bodystart="17" bodyend="21"/>
+    <listofallmembers>
+      <member refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" prot="public" virt="non-virtual"><scope>dht11_t</scope><name>dht11_pin</name></member>
+      <member refid="structdht11__t_1a6a87b2b0cff24d38b367ccd34843a206" prot="public" virt="non-virtual"><scope>dht11_t</scope><name>humidity</name></member>
+      <member refid="structdht11__t_1afc1d28cfbce795d6ea954ebe725241f5" prot="public" virt="non-virtual"><scope>dht11_t</scope><name>temperature</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

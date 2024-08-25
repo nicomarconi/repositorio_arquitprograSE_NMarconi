@@ -1,0 +1,124 @@
+\hypertarget{group__dht11__app}{}\doxysection{Dht11\+\_\+app}
+\label{group__dht11__app}\index{Dht11\_app@{Dht11\_app}}
+\doxysubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{dht11__app_8h}{dht11\+\_\+app.\+h}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdht11__t}{dht11\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure containing readings and info about the dht11. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__dht11__app_ga4a875583ac49783fd62ec2a1d2500c45}{CONFIG\+\_\+\+DHT11\+\_\+\+PIN}}~33
+\item 
+\#define \mbox{\hyperlink{group__dht11__app_ga0c63390af22aa0f877eece67372a7414}{CONNECTION\+\_\+\+TIMEOUT}}~5
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__dht11__app_ga148031b79d54fab90d1a0edd2c8df713}{wait\+\_\+for\+\_\+state}} (\mbox{\hyperlink{structdht11__t}{dht11\+\_\+t}} dht11, int state, int timeout)
+\begin{DoxyCompactList}\small\item\em Wait on pin until it reaches the specified state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__dht11__app_ga12e0d7e2dc516e7ee5e5f725d5a63117}{hold\+\_\+low}} (\mbox{\hyperlink{structdht11__t}{dht11\+\_\+t}} dht11, int hold\+\_\+time\+\_\+us)
+\begin{DoxyCompactList}\small\item\em Holds the pin low fo the specified duration. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__dht11__app_ga078422f8882d8e1f3123658895ef4904}{dht11\+\_\+read}} (\mbox{\hyperlink{structdht11__t}{dht11\+\_\+t}} $\ast$dht11, int connection\+\_\+timeout)
+\begin{DoxyCompactList}\small\item\em The function for reading temperature and humidity values from the dht11. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__dht11__app_ga4a875583ac49783fd62ec2a1d2500c45}\label{group__dht11__app_ga4a875583ac49783fd62ec2a1d2500c45}} 
+\index{Dht11\_app@{Dht11\_app}!CONFIG\_DHT11\_PIN@{CONFIG\_DHT11\_PIN}}
+\index{CONFIG\_DHT11\_PIN@{CONFIG\_DHT11\_PIN}!Dht11\_app@{Dht11\_app}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_DHT11\_PIN}{CONFIG\_DHT11\_PIN}}
+{\footnotesize\ttfamily \#define CONFIG\+\_\+\+DHT11\+\_\+\+PIN~33}
+
+ESP32 WROOM number pin to connect the dht11 data pin 
+
+Definition at line 9 of file dht11\+\_\+app.\+h.
+
+\mbox{\Hypertarget{group__dht11__app_ga0c63390af22aa0f877eece67372a7414}\label{group__dht11__app_ga0c63390af22aa0f877eece67372a7414}} 
+\index{Dht11\_app@{Dht11\_app}!CONNECTION\_TIMEOUT@{CONNECTION\_TIMEOUT}}
+\index{CONNECTION\_TIMEOUT@{CONNECTION\_TIMEOUT}!Dht11\_app@{Dht11\_app}}
+\doxysubsubsection{\texorpdfstring{CONNECTION\_TIMEOUT}{CONNECTION\_TIMEOUT}}
+{\footnotesize\ttfamily \#define CONNECTION\+\_\+\+TIMEOUT~5}
+
+the number of connection attempts before declaring a timeout 
+
+Definition at line 10 of file dht11\+\_\+app.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__dht11__app_ga078422f8882d8e1f3123658895ef4904}\label{group__dht11__app_ga078422f8882d8e1f3123658895ef4904}} 
+\index{Dht11\_app@{Dht11\_app}!dht11\_read@{dht11\_read}}
+\index{dht11\_read@{dht11\_read}!Dht11\_app@{Dht11\_app}}
+\doxysubsubsection{\texorpdfstring{dht11\_read()}{dht11\_read()}}
+{\footnotesize\ttfamily int dht11\+\_\+read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdht11__t}{dht11\+\_\+t}} $\ast$}]{dht11,  }\item[{int}]{connection\+\_\+timeout }\end{DoxyParamCaption})}
+
+
+
+The function for reading temperature and humidity values from the dht11. 
+
+\begin{DoxyNote}{Note}
+This function is blocking, ie\+: it forces the cpu to busy wait for the duration necessary to finish comms with the sensor. 
+
+Wait for atleast 2 seconds between reads 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em connection\+\_\+timeout} & the number of connection attempts before declaring a timeout \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file dht11\+\_\+app.\+c.
+
+\mbox{\Hypertarget{group__dht11__app_ga12e0d7e2dc516e7ee5e5f725d5a63117}\label{group__dht11__app_ga12e0d7e2dc516e7ee5e5f725d5a63117}} 
+\index{Dht11\_app@{Dht11\_app}!hold\_low@{hold\_low}}
+\index{hold\_low@{hold\_low}!Dht11\_app@{Dht11\_app}}
+\doxysubsubsection{\texorpdfstring{hold\_low()}{hold\_low()}}
+{\footnotesize\ttfamily void hold\+\_\+low (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdht11__t}{dht11\+\_\+t}}}]{dht11,  }\item[{int}]{hold\+\_\+time\+\_\+us }\end{DoxyParamCaption})}
+
+
+
+Holds the pin low fo the specified duration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hold\+\_\+time\+\_\+us} & time to hold the pin low for in microseconds \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file dht11\+\_\+app.\+c.
+
+\mbox{\Hypertarget{group__dht11__app_ga148031b79d54fab90d1a0edd2c8df713}\label{group__dht11__app_ga148031b79d54fab90d1a0edd2c8df713}} 
+\index{Dht11\_app@{Dht11\_app}!wait\_for\_state@{wait\_for\_state}}
+\index{wait\_for\_state@{wait\_for\_state}!Dht11\_app@{Dht11\_app}}
+\doxysubsubsection{\texorpdfstring{wait\_for\_state()}{wait\_for\_state()}}
+{\footnotesize\ttfamily int wait\+\_\+for\+\_\+state (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structdht11__t}{dht11\+\_\+t}}}]{dht11,  }\item[{int}]{state,  }\item[{int}]{timeout }\end{DoxyParamCaption})}
+
+
+
+Wait on pin until it reaches the specified state. 
+
+\begin{DoxyReturn}{Returns}
+returns either the time waited or -\/1 in the case of a timeout 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em state} & state to wait for \\
+\hline
+{\em timeout} & if counter reaches timeout the function returns -\/1 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file dht11\+\_\+app.\+c.
+

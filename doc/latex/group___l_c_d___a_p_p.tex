@@ -1,0 +1,199 @@
+\hypertarget{group___l_c_d___a_p_p}{}\doxysection{LCD\+\_\+\+APP}
+\label{group___l_c_d___a_p_p}\index{LCD\_APP@{LCD\_APP}}
+\doxysubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{lcd__app_8h}{lcd\+\_\+app.\+h}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___l_c_d___a_p_p_ga16b338f4ba8614530cf7e484066f29c5}{SLAVE\+\_\+\+ADDRESS\+\_\+\+LCD}}~0x27
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_ga6842775ba83d166f02b8fef8bb63b1e6}{lcd\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em This function calls inside initialitation functions for LCD and i2c comunication protcol. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_ga0934da706080d3b0b3b2f04c9d044e67}{lcd\+\_\+send\+\_\+cmd}} (char cmd)
+\begin{DoxyCompactList}\small\item\em the function {\bfseries{\mbox{\hyperlink{group___l_c_d___a_p_p_ga0934da706080d3b0b3b2f04c9d044e67}{lcd\+\_\+send\+\_\+cmd()}}}} sends cpmmand to the LCD in 4 bits mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_gac6c9650fc3a35bf393a6bf535e6d0b9f}{lcd\+\_\+send\+\_\+data}} (char data)
+\begin{DoxyCompactList}\small\item\em the function {\bfseries{\mbox{\hyperlink{group___l_c_d___a_p_p_gac6c9650fc3a35bf393a6bf535e6d0b9f}{lcd\+\_\+send\+\_\+data()}}}} sends data to the LCD in 4 bits mode. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_ga335c8a975c28b9eb7ee6c27a6efe7c44}{lcd\+\_\+put\+\_\+cur}} (int row, int col)
+\begin{DoxyCompactList}\small\item\em the function {\bfseries{\mbox{\hyperlink{group___l_c_d___a_p_p_ga335c8a975c28b9eb7ee6c27a6efe7c44}{lcd\+\_\+put\+\_\+cur()}}}} lcd\+\_\+put\+\_\+cur is used to put the cursor at the respective location on the LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_gad235a86241458b1e7b8771688bfdaf9a}{lcd\+\_\+clear}} (void)
+\begin{DoxyCompactList}\small\item\em LCD 1602 have a command to clear the entire screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_c_d___a_p_p_ga234ae1cb5d91fa756d1216e3540222ad}{lcd\+\_\+send\+\_\+string}} (char $\ast$str)
+\begin{DoxyCompactList}\small\item\em lcd\+\_\+send\+\_\+string can be used to send a character string, or a buffer (containing characters) to the display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+esp\+\_\+err\+\_\+t \mbox{\hyperlink{group___l_c_d___a_p_p_gae142073aa58743a872f2253c29556cdc}{err}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___l_c_d___a_p_p_ga16b338f4ba8614530cf7e484066f29c5}\label{group___l_c_d___a_p_p_ga16b338f4ba8614530cf7e484066f29c5}} 
+\index{LCD\_APP@{LCD\_APP}!SLAVE\_ADDRESS\_LCD@{SLAVE\_ADDRESS\_LCD}}
+\index{SLAVE\_ADDRESS\_LCD@{SLAVE\_ADDRESS\_LCD}!LCD\_APP@{LCD\_APP}}
+\doxysubsubsection{\texorpdfstring{SLAVE\_ADDRESS\_LCD}{SLAVE\_ADDRESS\_LCD}}
+{\footnotesize\ttfamily \#define SLAVE\+\_\+\+ADDRESS\+\_\+\+LCD~0x27}
+
+Address of PCF8574 
+
+Definition at line 11 of file lcd\+\_\+app.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_c_d___a_p_p_gad235a86241458b1e7b8771688bfdaf9a}\label{group___l_c_d___a_p_p_gad235a86241458b1e7b8771688bfdaf9a}} 
+\index{LCD\_APP@{LCD\_APP}!lcd\_clear@{lcd\_clear}}
+\index{lcd\_clear@{lcd\_clear}!LCD\_APP@{LCD\_APP}}
+\doxysubsubsection{\texorpdfstring{lcd\_clear()}{lcd\_clear()}}
+{\footnotesize\ttfamily void lcd\+\_\+clear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+LCD 1602 have a command to clear the entire screen. 
+
+
+\begin{DoxyItemize}
+\item {\bfseries{0x01}} can be used to clear the entire screen and set.
+\item The cursor to the beginning, i.\+e at the 0x80 location.
+\item The command needs some time to execute, and therefore we have to provide some delay. 
+\end{DoxyItemize}
+
+Definition at line 99 of file lcd\+\_\+app.\+c.
+
+\mbox{\Hypertarget{group___l_c_d___a_p_p_ga6842775ba83d166f02b8fef8bb63b1e6}\label{group___l_c_d___a_p_p_ga6842775ba83d166f02b8fef8bb63b1e6}} 
+\index{LCD\_APP@{LCD\_APP}!lcd\_init@{lcd\_init}}
+\index{lcd\_init@{lcd\_init}!LCD\_APP@{LCD\_APP}}
+\doxysubsubsection{\texorpdfstring{lcd\_init()}{lcd\_init()}}
+{\footnotesize\ttfamily void lcd\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function calls inside initialitation functions for LCD and i2c comunication protcol. 
+
+To follow the initialitation steps go to figure 24 in the datasheet. In order to initialise the LCD, we need to send some set of commands. In order to send the command or data to the LCD, we need to follow some set of steps
+\begin{DoxyItemize}
+\item Set/\+Reset the data pins (D0 – D7) with respect to what data we want to write.
+\item Send a strobe signal, which is basically setting the ENABLE pin, and then Resetting it. 
+\end{DoxyItemize}
+
+Definition at line 14 of file lcd\+\_\+app.\+c.
+
+\mbox{\Hypertarget{group___l_c_d___a_p_p_ga335c8a975c28b9eb7ee6c27a6efe7c44}\label{group___l_c_d___a_p_p_ga335c8a975c28b9eb7ee6c27a6efe7c44}} 
+\index{LCD\_APP@{LCD\_APP}!lcd\_put\_cur@{lcd\_put\_cur}}
+\index{lcd\_put\_cur@{lcd\_put\_cur}!LCD\_APP@{LCD\_APP}}
+\doxysubsubsection{\texorpdfstring{lcd\_put\_cur()}{lcd\_put\_cur()}}
+{\footnotesize\ttfamily void lcd\+\_\+put\+\_\+cur (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{col }\end{DoxyParamCaption})}
+
+
+
+the function {\bfseries{\mbox{\hyperlink{group___l_c_d___a_p_p_ga335c8a975c28b9eb7ee6c27a6efe7c44}{lcd\+\_\+put\+\_\+cur()}}}} lcd\+\_\+put\+\_\+cur is used to put the cursor at the respective location on the LCD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em row} & row where set the cursor. \\
+\hline
+{\em col} & row where set the cursor.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item As we already know, the LCD1602 have 2 Rows (0-\/1) and 16 Columns (0-\/15).The DDRAM Address for the LCD1602 starts from the 0x80.
+\item So If we tell LCD to put the cursor at 0x80, it will basically put it in the beginning of the Top Row.
+\item Then the next Position will be 0x81, 0x82 and so on, upto 0x8\+F.\+The beginning of the bottom row starts from 0x\+C0, and goes all the way upto 0x\+CF.
+\item For example, If i want to put the cursor at the position (0,5), then the code will add 0x80 and 0x05, making it 0x85 and send this command to the LCD.
+\item After we put the cursor at certain location, we can send the data to it, which will be displayed on the LCD. 
+\end{DoxyItemize}
+
+Definition at line 78 of file lcd\+\_\+app.\+c.
+
+\mbox{\Hypertarget{group___l_c_d___a_p_p_ga0934da706080d3b0b3b2f04c9d044e67}\label{group___l_c_d___a_p_p_ga0934da706080d3b0b3b2f04c9d044e67}} 
+\index{LCD\_APP@{LCD\_APP}!lcd\_send\_cmd@{lcd\_send\_cmd}}
+\index{lcd\_send\_cmd@{lcd\_send\_cmd}!LCD\_APP@{LCD\_APP}}
+\doxysubsubsection{\texorpdfstring{lcd\_send\_cmd()}{lcd\_send\_cmd()}}
+{\footnotesize\ttfamily void lcd\+\_\+send\+\_\+cmd (\begin{DoxyParamCaption}\item[{char}]{cmd }\end{DoxyParamCaption})}
+
+
+
+the function {\bfseries{\mbox{\hyperlink{group___l_c_d___a_p_p_ga0934da706080d3b0b3b2f04c9d044e67}{lcd\+\_\+send\+\_\+cmd()}}}} sends cpmmand to the LCD in 4 bits mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & command to send to LCD.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item The he PCF8574 is connected to 4 data pins (D4 – D7.
+\item This means we only have 4 data pins available to write a 8 bit data.
+\item We do this by sending the data into 2 halves (4 bit each).
+\item Here first we will separate the upper 4 bits (stored in data\+\_\+u) and lower 4 bits (data\+\_\+l) from the command.
+\item We have to tell the LCD that it’s a {\bfseries{command, and we do that by pulling the RS pin LOW.}}
+\item We also have to do send each half twice, once when the EN (enable) pin is HIGH, and when it’s LOW. 
+\end{DoxyItemize}
+
+Definition at line 41 of file lcd\+\_\+app.\+c.
+
+\mbox{\Hypertarget{group___l_c_d___a_p_p_gac6c9650fc3a35bf393a6bf535e6d0b9f}\label{group___l_c_d___a_p_p_gac6c9650fc3a35bf393a6bf535e6d0b9f}} 
+\index{LCD\_APP@{LCD\_APP}!lcd\_send\_data@{lcd\_send\_data}}
+\index{lcd\_send\_data@{lcd\_send\_data}!LCD\_APP@{LCD\_APP}}
+\doxysubsubsection{\texorpdfstring{lcd\_send\_data()}{lcd\_send\_data()}}
+{\footnotesize\ttfamily void lcd\+\_\+send\+\_\+data (\begin{DoxyParamCaption}\item[{char}]{data }\end{DoxyParamCaption})}
+
+
+
+the function {\bfseries{\mbox{\hyperlink{group___l_c_d___a_p_p_gac6c9650fc3a35bf393a6bf535e6d0b9f}{lcd\+\_\+send\+\_\+data()}}}} sends data to the LCD in 4 bits mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & data to send to LCD.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item This function prints a single character and the argument of this function should be the ascii character that you want to print on the display,
+\item For eg-\/ lcd\+\_\+send\+\_\+data (‘\+A’) or lcd\+\_\+send\+\_\+data (0x41) or lcd\+\_\+send\+\_\+data (65), all will print the character A on the LCD.
+\item The he PCF8574 is connected to 4 data pins (D4 – D7.
+\item This means we only have 4 data pins available to write a 8 bit data.
+\item We do this by sending the data into 2 halves (4 bit each).
+\item Here first we will separate the upper 4 bits (stored in data\+\_\+u) and lower 4 bits (data\+\_\+l) from the {\bfseries{data}}.
+\item We have to tell the LCD that it’s a {\bfseries{data, and we do that by pulling the RS pin HIGH.}}
+\item We also have to do send each half twice, once when the EN (enable) pin is HIGH, and when it’s LOW. 
+\end{DoxyItemize}
+
+Definition at line 56 of file lcd\+\_\+app.\+c.
+
+\mbox{\Hypertarget{group___l_c_d___a_p_p_ga234ae1cb5d91fa756d1216e3540222ad}\label{group___l_c_d___a_p_p_ga234ae1cb5d91fa756d1216e3540222ad}} 
+\index{LCD\_APP@{LCD\_APP}!lcd\_send\_string@{lcd\_send\_string}}
+\index{lcd\_send\_string@{lcd\_send\_string}!LCD\_APP@{LCD\_APP}}
+\doxysubsubsection{\texorpdfstring{lcd\_send\_string()}{lcd\_send\_string()}}
+{\footnotesize\ttfamily void lcd\+\_\+send\+\_\+string (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+lcd\+\_\+send\+\_\+string can be used to send a character string, or a buffer (containing characters) to the display. 
+
+
+
+Definition at line 94 of file lcd\+\_\+app.\+c.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group___l_c_d___a_p_p_gae142073aa58743a872f2253c29556cdc}\label{group___l_c_d___a_p_p_gae142073aa58743a872f2253c29556cdc}} 
+\index{LCD\_APP@{LCD\_APP}!err@{err}}
+\index{err@{err}!LCD\_APP@{LCD\_APP}}
+\doxysubsubsection{\texorpdfstring{err}{err}}
+{\footnotesize\ttfamily esp\+\_\+err\+\_\+t err}
+
+
+
+Definition at line 11 of file lcd\+\_\+app.\+c.
+

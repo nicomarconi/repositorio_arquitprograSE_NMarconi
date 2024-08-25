@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="startup__app_8c" kind="file" language="C++">
+    <compoundname>startup_app.c</compoundname>
+    <includes refid="startup__app_8h" local="yes">include/startup_app.h</includes>
+    <includes local="yes">driver/gpio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes local="no">unistd.h</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>driver/gpio.h</label>
+      </node>
+      <node id="1">
+        <label>/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c</label>
+        <link refid="startup__app_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>include/i2c_app.h</label>
+        <link refid="i2c__app_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>include/lcd_app.h</label>
+        <link refid="lcd__app_8h"/>
+      </node>
+      <node id="3">
+        <label>include/dht11_app.h</label>
+        <link refid="dht11__app_8h"/>
+      </node>
+      <node id="9">
+        <label>string.h</label>
+      </node>
+      <node id="10">
+        <label>unistd.h</label>
+      </node>
+      <node id="5">
+        <label>driver/i2c.h</label>
+      </node>
+      <node id="2">
+        <label>include/startup_app.h</label>
+        <link refid="startup__app_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>esp_check.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__startup__app_1ga9b70b8c1d6de4b22117b427caa1002b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void welcome_message</definition>
+        <argsstring>(void)</argsstring>
+        <name>welcome_message</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function shows on the LCD screen some general information as, project&apos;s name, project&apos;s author,and so on. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" line="11" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" bodystart="11" bodyend="36" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h" declline="17" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__startup__app_1ga2d4f524570a1f8716afe8b4615976f6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void get_temp_humed</definition>
+        <argsstring>(void)</argsstring>
+        <name>get_temp_humed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function is inide of a while loop and shows on the LCD screen the temperature and humedity current values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" line="38" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" bodystart="38" bodyend="56" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h" declline="24" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="startup__app_8h" kindref="compound">include/startup_app.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;driver/gpio.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;unistd.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11" refid="group__startup__app_1ga9b70b8c1d6de4b22117b427caa1002b7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__startup__app_1ga9b70b8c1d6de4b22117b427caa1002b7" kindref="member">welcome_message</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kindref="member">lcd_put_cur</ref>(0,<sp/>0);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" kindref="member">lcd_send_string</ref>(</highlight><highlight class="stringliteral">&quot;Arquitectura<sp/>y<sp/>&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kindref="member">lcd_put_cur</ref>(1,<sp/>0);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" kindref="member">lcd_send_string</ref>(</highlight><highlight class="stringliteral">&quot;Prgrmacion<sp/>de<sp/>SE&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/>usleep(3000000);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1gad235a86241458b1e7b8771688bfdaf9a" kindref="member">lcd_clear</ref>();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kindref="member">lcd_put_cur</ref>(0,<sp/>0);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" kindref="member">lcd_send_string</ref>(</highlight><highlight class="stringliteral">&quot;TF:<sp/>Sensor<sp/>de&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kindref="member">lcd_put_cur</ref>(1,<sp/>0);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" kindref="member">lcd_send_string</ref>(</highlight><highlight class="stringliteral">&quot;Temprtura-Humdad&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>usleep(3000000);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1gad235a86241458b1e7b8771688bfdaf9a" kindref="member">lcd_clear</ref>();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kindref="member">lcd_put_cur</ref>(0,<sp/>2);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" kindref="member">lcd_send_string</ref>(</highlight><highlight class="stringliteral">&quot;Bioingeniero&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kindref="member">lcd_put_cur</ref>(1,<sp/>0);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" kindref="member">lcd_send_string</ref>(</highlight><highlight class="stringliteral">&quot;Nicolas<sp/>Marconi&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>usleep(3000000);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1gad235a86241458b1e7b8771688bfdaf9a" kindref="member">lcd_clear</ref>();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="group__startup__app_1ga2d4f524570a1f8716afe8b4615976f6b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__startup__app_1ga2d4f524570a1f8716afe8b4615976f6b" kindref="member">get_temp_humed</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>buffer_tempe[10];</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>buffer_humed[10];</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structdht11__t" kindref="compound">dht11_t</ref><sp/>dht11_sensor;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>dht11_sensor.<ref refid="structdht11__t_1a6a5d2fe3eea2affe04048c4c9de13cfc" kindref="member">dht11_pin</ref><sp/>=<sp/><ref refid="group__dht11__app_1ga4a875583ac49783fd62ec2a1d2500c45" kindref="member">CONFIG_DHT11_PIN</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(!<ref refid="group__dht11__app_1ga078422f8882d8e1f3123658895ef4904" kindref="member">dht11_read</ref>(&amp;dht11_sensor,<sp/><ref refid="group__dht11__app_1ga0c63390af22aa0f877eece67372a7414" kindref="member">CONNECTION_TIMEOUT</ref>))</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{<sp/><sp/></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kindref="member">lcd_put_cur</ref>(0,<sp/>2);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(&amp;buffer_tempe,<sp/></highlight><highlight class="stringliteral">&quot;tempe<sp/>=<sp/>%.2f&quot;</highlight><highlight class="normal">,<sp/>dht11_sensor.<ref refid="structdht11__t_1afc1d28cfbce795d6ea954ebe725241f5" kindref="member">temperature</ref>);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" kindref="member">lcd_send_string</ref>(&amp;buffer_tempe);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga335c8a975c28b9eb7ee6c27a6efe7c44" kindref="member">lcd_put_cur</ref>(1,<sp/>2);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sprintf(&amp;buffer_humed,<sp/></highlight><highlight class="stringliteral">&quot;humed<sp/>=<sp/>%.2f&quot;</highlight><highlight class="normal">,<sp/>dht11_sensor.<ref refid="structdht11__t_1a6a87b2b0cff24d38b367ccd34843a206" kindref="member">humidity</ref>);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group___l_c_d___a_p_p_1ga234ae1cb5d91fa756d1216e3540222ad" kindref="member">lcd_send_string</ref>(&amp;buffer_humed);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>usleep(5000000);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,37 @@
+\hypertarget{dht11__app_8h}{}\doxysection{/home/nicolas/\+Documentos/especialidad\+\_\+en\+\_\+\+SE/2\+\_\+arquitectura\+\_\+2024\+\_\+\+SE/lcd\+\_\+hdt11\+\_\+nico/main/devices/include/dht11\+\_\+app.h File Reference}
+\label{dht11__app_8h}\index{/home/nicolas/Documentos/especialidad\_en\_SE/2\_arquitectura\_2024\_SE/lcd\_hdt11\_nico/main/devices/include/dht11\_app.h@{/home/nicolas/Documentos/especialidad\_en\_SE/2\_arquitectura\_2024\_SE/lcd\_hdt11\_nico/main/devices/include/dht11\_app.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dht11__app_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdht11__t}{dht11\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure containing readings and info about the dht11. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__dht11__app_ga4a875583ac49783fd62ec2a1d2500c45}{CONFIG\+\_\+\+DHT11\+\_\+\+PIN}}~33
+\item 
+\#define \mbox{\hyperlink{group__dht11__app_ga0c63390af22aa0f877eece67372a7414}{CONNECTION\+\_\+\+TIMEOUT}}~5
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__dht11__app_ga148031b79d54fab90d1a0edd2c8df713}{wait\+\_\+for\+\_\+state}} (\mbox{\hyperlink{structdht11__t}{dht11\+\_\+t}} dht11, int state, int timeout)
+\begin{DoxyCompactList}\small\item\em Wait on pin until it reaches the specified state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__dht11__app_ga12e0d7e2dc516e7ee5e5f725d5a63117}{hold\+\_\+low}} (\mbox{\hyperlink{structdht11__t}{dht11\+\_\+t}} dht11, int hold\+\_\+time\+\_\+us)
+\begin{DoxyCompactList}\small\item\em Holds the pin low fo the specified duration. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__dht11__app_ga078422f8882d8e1f3123658895ef4904}{dht11\+\_\+read}} (\mbox{\hyperlink{structdht11__t}{dht11\+\_\+t}} $\ast$dht11, int connection\+\_\+timeout)
+\begin{DoxyCompactList}\small\item\em The function for reading temperature and humidity values from the dht11. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyDate}{Date}
+07/20/2023 
+\end{DoxyDate}

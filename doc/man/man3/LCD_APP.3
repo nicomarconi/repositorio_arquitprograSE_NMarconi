@@ -1,0 +1,191 @@
+.TH "LCD_APP" 3 "Sat Jul 27 2024" "Humedity and Temperature Sensing System Based in ESP32 Module" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LCD_APP \- LCD_APP
+.SH SYNOPSIS
+.br
+.PP
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBlcd_app\&.h\fP"
+.br
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBSLAVE_ADDRESS_LCD\fP   0x27"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBlcd_init\fP (void)"
+.br
+.RI "This function calls inside initialitation functions for LCD and i2c comunication protcol\&. "
+.ti -1c
+.RI "void \fBlcd_send_cmd\fP (char cmd)"
+.br
+.RI "the function \fB\fBlcd_send_cmd()\fP\fP sends cpmmand to the LCD in 4 bits mode\&. "
+.ti -1c
+.RI "void \fBlcd_send_data\fP (char data)"
+.br
+.RI "the function \fB\fBlcd_send_data()\fP\fP sends data to the LCD in 4 bits mode\&. "
+.ti -1c
+.RI "void \fBlcd_put_cur\fP (int row, int col)"
+.br
+.RI "the function \fB\fBlcd_put_cur()\fP\fP lcd_put_cur is used to put the cursor at the respective location on the LCD\&. "
+.ti -1c
+.RI "void \fBlcd_clear\fP (void)"
+.br
+.RI "LCD 1602 have a command to clear the entire screen\&. "
+.ti -1c
+.RI "void \fBlcd_send_string\fP (char *str)"
+.br
+.RI "lcd_send_string can be used to send a character string, or a buffer (containing characters) to the display\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "esp_err_t \fBerr\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define SLAVE_ADDRESS_LCD   0x27"
+Address of PCF8574 
+.PP
+Definition at line 11 of file lcd_app\&.h\&.
+.SH "Function Documentation"
+.PP 
+.SS "void lcd_clear (void)"
+
+.PP
+LCD 1602 have a command to clear the entire screen\&. 
+.IP "\(bu" 2
+\fB0x01\fP can be used to clear the entire screen and set\&.
+.IP "\(bu" 2
+The cursor to the beginning, i\&.e at the 0x80 location\&.
+.IP "\(bu" 2
+The command needs some time to execute, and therefore we have to provide some delay\&. 
+.PP
+
+.PP
+Definition at line 99 of file lcd_app\&.c\&.
+.SS "void lcd_init (void)"
+
+.PP
+This function calls inside initialitation functions for LCD and i2c comunication protcol\&. To follow the initialitation steps go to figure 24 in the datasheet\&. In order to initialise the LCD, we need to send some set of commands\&. In order to send the command or data to the LCD, we need to follow some set of steps
+.IP "\(bu" 2
+Set/Reset the data pins (D0 – D7) with respect to what data we want to write\&.
+.IP "\(bu" 2
+Send a strobe signal, which is basically setting the ENABLE pin, and then Resetting it\&. 
+.PP
+
+.PP
+Definition at line 14 of file lcd_app\&.c\&.
+.SS "void lcd_put_cur (int row, int col)"
+
+.PP
+the function \fB\fBlcd_put_cur()\fP\fP lcd_put_cur is used to put the cursor at the respective location on the LCD\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrow\fP row where set the cursor\&. 
+.br
+\fIcol\fP row where set the cursor\&.
+.RE
+.PP
+.IP "\(bu" 2
+As we already know, the LCD1602 have 2 Rows (0-1) and 16 Columns (0-15)\&.The DDRAM Address for the LCD1602 starts from the 0x80\&.
+.IP "\(bu" 2
+So If we tell LCD to put the cursor at 0x80, it will basically put it in the beginning of the Top Row\&.
+.IP "\(bu" 2
+Then the next Position will be 0x81, 0x82 and so on, upto 0x8F\&.The beginning of the bottom row starts from 0xC0, and goes all the way upto 0xCF\&.
+.IP "\(bu" 2
+For example, If i want to put the cursor at the position (0,5), then the code will add 0x80 and 0x05, making it 0x85 and send this command to the LCD\&.
+.IP "\(bu" 2
+After we put the cursor at certain location, we can send the data to it, which will be displayed on the LCD\&. 
+.PP
+
+.PP
+Definition at line 78 of file lcd_app\&.c\&.
+.SS "void lcd_send_cmd (char cmd)"
+
+.PP
+the function \fB\fBlcd_send_cmd()\fP\fP sends cpmmand to the LCD in 4 bits mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcmd\fP command to send to LCD\&.
+.RE
+.PP
+.IP "\(bu" 2
+The he PCF8574 is connected to 4 data pins (D4 – D7\&.
+.IP "\(bu" 2
+This means we only have 4 data pins available to write a 8 bit data\&.
+.IP "\(bu" 2
+We do this by sending the data into 2 halves (4 bit each)\&.
+.IP "\(bu" 2
+Here first we will separate the upper 4 bits (stored in data_u) and lower 4 bits (data_l) from the command\&.
+.IP "\(bu" 2
+We have to tell the LCD that it’s a \fBcommand, and we do that by pulling the RS pin LOW\&.\fP
+.IP "\(bu" 2
+We also have to do send each half twice, once when the EN (enable) pin is HIGH, and when it’s LOW\&. 
+.PP
+
+.PP
+Definition at line 41 of file lcd_app\&.c\&.
+.SS "void lcd_send_data (char data)"
+
+.PP
+the function \fB\fBlcd_send_data()\fP\fP sends data to the LCD in 4 bits mode\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIdata\fP data to send to LCD\&.
+.RE
+.PP
+.IP "\(bu" 2
+This function prints a single character and the argument of this function should be the ascii character that you want to print on the display,
+.IP "\(bu" 2
+For eg- lcd_send_data (‘A’) or lcd_send_data (0x41) or lcd_send_data (65), all will print the character A on the LCD\&.
+.IP "\(bu" 2
+The he PCF8574 is connected to 4 data pins (D4 – D7\&.
+.IP "\(bu" 2
+This means we only have 4 data pins available to write a 8 bit data\&.
+.IP "\(bu" 2
+We do this by sending the data into 2 halves (4 bit each)\&.
+.IP "\(bu" 2
+Here first we will separate the upper 4 bits (stored in data_u) and lower 4 bits (data_l) from the \fBdata\fP\&.
+.IP "\(bu" 2
+We have to tell the LCD that it’s a \fBdata, and we do that by pulling the RS pin HIGH\&.\fP
+.IP "\(bu" 2
+We also have to do send each half twice, once when the EN (enable) pin is HIGH, and when it’s LOW\&. 
+.PP
+
+.PP
+Definition at line 56 of file lcd_app\&.c\&.
+.SS "void lcd_send_string (char * str)"
+
+.PP
+lcd_send_string can be used to send a character string, or a buffer (containing characters) to the display\&. 
+.PP
+Definition at line 94 of file lcd_app\&.c\&.
+.SH "Variable Documentation"
+.PP 
+.SS "esp_err_t err"
+
+.PP
+Definition at line 11 of file lcd_app\&.c\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Humedity and Temperature Sensing System Based in ESP32 Module from the source code\&.

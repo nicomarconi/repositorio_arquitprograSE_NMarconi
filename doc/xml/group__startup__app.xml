@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.1" xml:lang="en-US">
+  <compounddef id="group__startup__app" kind="group">
+    <compoundname>startup_app</compoundname>
+    <title>Startup_app</title>
+    <innerfile refid="startup__app_8h">startup_app.h</innerfile>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__startup__app_1ga9b70b8c1d6de4b22117b427caa1002b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void welcome_message</definition>
+        <argsstring>(void)</argsstring>
+        <name>welcome_message</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function shows on the LCD screen some general information as, project&apos;s name, project&apos;s author,and so on. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" line="11" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" bodystart="11" bodyend="36" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h" declline="17" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="group__startup__app_1ga2d4f524570a1f8716afe8b4615976f6b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void get_temp_humed</definition>
+        <argsstring>(void)</argsstring>
+        <name>get_temp_humed</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function is inide of a while loop and shows on the LCD screen the temperature and humedity current values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" line="38" column="6" bodyfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/startup_app.c" bodystart="38" bodyend="56" declfile="/home/nicolas/Documentos/especialidad_en_SE/2_arquitectura_2024_SE/lcd_hdt11_nico/main/devices/include/startup_app.h" declline="24" declcolumn="6"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

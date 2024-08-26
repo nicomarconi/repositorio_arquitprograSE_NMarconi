@@ -11,6 +11,9 @@
 esp_err_t  err;
 static const char *TAG = "LCD";
 
+void lcd_send_cmd (static char cmd);
+void lcd_send_data (static char data);
+
 void lcd_init (void)
 {
 	// 4 bit initialisation

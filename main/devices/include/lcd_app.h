@@ -20,44 +20,6 @@
  */
 void lcd_init (void);
 
-/**
- *  @brief the function **lcd_send_cmd()** sends cpmmand to the LCD in 4 bits mode.
- *  @param cmd command to send to LCD.
- *  
- *  - The he PCF8574 is connected to 4 data pins (D4 – D7.
- *  - This means we only have 4 data pins available to write a 8 bit data.
- *  - We do this by sending the data into 2 halves (4 bit each).
- *  - Here first we will separate the upper 4 bits (stored in data_u) 
- *    and lower 4 bits (data_l) from the command.
- *  - We have to tell the LCD that it’s a **command, and we do that by
- *    pulling the RS pin LOW.**
- *  - We also have to do send each half twice, once when the EN (enable) pin is 
- *    HIGH, and when it’s LOW.
- */  
-
-
-void lcd_send_cmd (static char cmd);
-
-/**
- *  @brief the function **lcd_send_data()** sends data to the LCD in 4 bits mode.
- *  @param data data to send to LCD.
- *
- *  - This function prints a single character and the argument of this function 
- *    should be the ascii character that you want to print on the display,
- *  - For eg- lcd_send_data (‘A’) or lcd_send_data (0x41) or lcd_send_data (65),
- *    all will print the character A on the LCD.
- *
- *  - The he PCF8574 is connected to 4 data pins (D4 – D7.
- *  - This means we only have 4 data pins available to write a 8 bit data.
- *  - We do this by sending the data into 2 halves (4 bit each).
- *  - Here first we will separate the upper 4 bits (stored in data_u) 
- *    and lower 4 bits (data_l) from the **data**.
- *  - We have to tell the LCD that it’s a **data, and we do that by
- *    pulling the RS pin HIGH.**
- *  - We also have to do send each half twice, once when the EN (enable) pin is 
- *    HIGH, and when it’s LOW.
- */  
-void lcd_send_data (static char data);
 
 
 /**
